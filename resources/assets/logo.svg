@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="200" height="200" rx="20" fill="none"/>
+  <path
+    d="M100 40C120 40 135 55 135 75V85H140C145 85 150 90 150 95V140C150 145 145 150 140 150H60C55 150 50 145 50 140V95C50 90 55 85 60 85H65V75C65 55 80 40 100 40ZM85 85H115V75C115 62 108 55 100 55C92 55 85 62 85 75V85ZM65 100V135H135V100H65Z"
+    fill="#f53003"
+  />
+  <circle cx="100" cy="118" r="10" fill="#f53003"/>
+</svg>
