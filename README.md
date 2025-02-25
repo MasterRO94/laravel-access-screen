@@ -1,6 +1,6 @@
 # Access Screen for Laravel
 
-![Access Screen Logo](https://raw.githubusercontent.com/masterro/laravel-access-screen/main/resources/assets/logo.svg)
+![Access Screen Logo](https://github.com/MasterRO94/laravel-access-screen/blob/main/resources/assets/logo.svg)
 
 ## Introduction
 
