@@ -56,9 +56,7 @@ To protect specific routes, apply the middleware to them:
 use MasterRO\AccessScreen\Middleware\RedirectToAccessScreen;
 
 Route::middleware([RedirectToAccessScreen::class])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 });
 ```
 
@@ -67,9 +65,10 @@ Route::middleware([RedirectToAccessScreen::class])->group(function () {
 To guard the entire application, apply the middleware globally in `bootstrap/app.php`:
 
 ```php
-$app->middleware([
-    \MasterRO\AccessScreen\Middleware\RedirectToAccessScreen::class,
-]);
+$app
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->use([RedirectToAccessScreen::class]);
+    })
 ```
 
 ## Generating an Access Key
