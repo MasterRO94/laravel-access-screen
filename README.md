@@ -4,6 +4,12 @@
   <img width="471" height="510" src="https://github.com/MasterRO94/laravel-access-screen/blob/main/resources/assets/demo.png">
 </p>
 
+<p align="center">
+    <a href="https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md">
+        <img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg" alt="StandWithUkraine">
+    </a>
+</p>
+
 ## Introduction
 
 Access Screen for Laravel is a package that allows you to guard specific routes or an entire Laravel application with an access screen. Users must enter an access key to proceed, and the package provides a command to generate this key. Once a valid key is entered, the screen will not be shown again for a specified period of time.
