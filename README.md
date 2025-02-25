@@ -1,6 +1,8 @@
 # Access Screen for Laravel
 
+<p align="center">   
 ![Access Screen Logo](https://github.com/MasterRO94/laravel-access-screen/blob/main/resources/assets/logo.svg)
+</p>
 
 ## Introduction
 
