@@ -45,7 +45,7 @@ class RedirectToAccessScreen
             ...$this->except,
             ...static::$ignore,
             ...config('access-screen.except', []),
-            config('access-screen.url'),
+            config('access-screen.uri'),
         ];
     }
 

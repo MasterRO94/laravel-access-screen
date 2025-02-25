@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MasterRO\AccessScreen\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
@@ -12,8 +13,16 @@ use Illuminate\View\View;
 
 class AccessScreenController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View|RedirectResponse
     {
+        $key = $request->cookie('access_screen_key')
+            ?? $request->header('X-ACCESS_SCREEN-KEY')
+            ?? $request->input('access_screen_key');
+
+        if ($key === config('access-screen.access_key')) {
+            return redirect()->intended(url('/'));
+        }
+
         return view('access-screen::index');
     }
 

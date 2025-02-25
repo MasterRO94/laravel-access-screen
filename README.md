@@ -67,7 +67,7 @@ To guard the entire application, apply the middleware globally in `bootstrap/app
 ```php
 $app
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->use([RedirectToAccessScreen::class]);
+        $middleware->appendToGroup('web', [RedirectToAccessScreen::class]);
     })
 ```
 
