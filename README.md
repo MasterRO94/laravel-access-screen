@@ -2,6 +2,7 @@
 
 <p align="center">
   <img width="300" height="300" src="https://github.com/MasterRO94/laravel-access-screen/blob/main/resources/assets/logo.svg">
+  <img width="471" height="510" src="https://github.com/MasterRO94/laravel-access-screen/blob/main/resources/assets/demo.png">
 </p>
 
 ## Introduction
