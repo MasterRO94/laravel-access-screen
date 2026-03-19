@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 use MasterRO\AccessScreen\Middleware\RedirectToAccessScreen;
 
+afterEach(function () {
+    // Reset static ignore list between tests to prevent leakage
+    (fn () => static::$ignore = [])->bindTo(null, RedirectToAccessScreen::class)();
+});
+
 it('excludes uris via static except method', function () {
     RedirectToAccessScreen::except('/webhook');
 

@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Facades\Cookie;
-
 it('redirects to access screen when no key is provided', function () {
-    $this->get('/')
+    $this->get('/protected')
         ->assertRedirect(route('access-screen::index'));
 });
 
@@ -24,18 +22,23 @@ it('returns validation error for invalid key', function () {
         ->assertSessionHasErrors('access_key');
 });
 
-it('returns 422 for missing key', function () {
+it('returns validation error for missing key', function () {
     $this->post(route('access-screen::store'), [])
         ->assertSessionHasErrors('access_key');
 });
 
-it('allows access when valid cookie is present', function () {
-    $this->withCookie('access_screen_key', 'test-key')
-        ->get('/')
+it('allows access when valid key header is present', function () {
+    $this->withHeader('X-ACCESS_SCREEN-KEY', 'test-key')
+        ->get('/protected')
+        ->assertOk();
+});
+
+it('allows access when valid key is provided as query parameter', function () {
+    $this->get('/protected?access_screen_key=test-key')
         ->assertOk();
 });
 
 it('aborts with 403 for json requests without valid key', function () {
-    $this->getJson('/')
+    $this->getJson('/protected')
         ->assertForbidden();
 });
